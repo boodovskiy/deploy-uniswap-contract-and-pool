@@ -8,6 +8,7 @@ async function main() {
 }
 
 // npx hardhat run scripts/00_deployBudCoin.js --network sepolia
+// Bud Coin deployed to  0x20FeD52cf5eFD75b37A142037bE9af9782AcB202
 
 main()
     .then(() => process.exit(0))
