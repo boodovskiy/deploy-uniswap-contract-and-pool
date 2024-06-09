@@ -7,7 +7,7 @@ module.exports = {
   networks: {
     sepolia: {
       url: process.env.INFURA_URL_SEPOLIA,
-      accounts: [process.env.PRIVATE_KEY]
+      accounts: [process.env.PRIVATE_KEY, process.env.PRIVATE_KEY_2]
     },
   },
 };
