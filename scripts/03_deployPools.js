@@ -6,6 +6,7 @@ SWAP_ROUTER_ADDRESS=process.env.SWAP_ROUTER_ADDRESS
 USDC_ADDRESS=process.env.USDC_ADDRESS
 TETHER_ADDRESS=process.env.TETHER_ADDRESS
 WRAPPED_BITCOIN_ADDRESS=process.env.WRAPPED_BITCOIN_ADDRESS
+//NFT_DESCRIPTOR_ADDRESS=
 
 const artifacts = {
     UniswapV3Factory: require('@uniswap/v3-core/artifacts/contracts/UniswapV3Factory.sol/UniswapV3Factory.json'),
