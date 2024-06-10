@@ -34,7 +34,7 @@ function encodePriceSqrt(reserve1, reserve0) {
 }
 
 const nonfungiblePositionManager = new Contract(
-    POSITION_MANAGER_ADDRESS, // comment this?
+    POSITION_MANAGER_ADDRESS,
     artifacts.NonfungiblePositionManager.abi,
     provider
 )
