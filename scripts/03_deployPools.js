@@ -6,7 +6,7 @@ SWAP_ROUTER_ADDRESS=process.env.SWAP_ROUTER_ADDRESS
 USDC_ADDRESS=process.env.USDC_ADDRESS
 TETHER_ADDRESS=process.env.TETHER_ADDRESS
 WRAPPED_BITCOIN_ADDRESS=process.env.WRAPPED_BITCOIN_ADDRESS
-//NFT_DESCRIPTOR_ADDRESS=
+POSITION_MANAGER_ADDRESS=process.env.POSITION_MANAGER_ADDRESS
 
 const artifacts = {
     UniswapV3Factory: require('@uniswap/v3-core/artifacts/contracts/UniswapV3Factory.sol/UniswapV3Factory.json'),
@@ -15,7 +15,7 @@ const artifacts = {
 
 const { Contract, BigNumber } = require("ethers")
 const bn = require('bignumber.js')
-const promisify = require("util")
+const { promisify } = require("util")
 const fs = require('fs')
 const { ethers } = require('hardhat')
 const { NonfungiblePositionManager } = require('@uniswap/v3-sdk')
@@ -28,7 +28,7 @@ function encodePriceSqrt(reserve1, reserve0) {
         new bn(reserve1.toString())
             .div(reserve0.toString())
             .sqrt()
-            .multipleBy(new bn(2).pow(96))
+            .multipliedBy(new bn(2).pow(96))
             .integerValue(3)
             .toString()
     )
@@ -49,13 +49,14 @@ const factory = new Contract(
 async function deployPool(token0, token1, fee, price) {
     const [owner] = await ethers.getSigners();
 
-    await NonfungiblePositionManager.connect(owner).createAndInitializePoolIfNecessary(
+    await nonfungiblePositionManager.connect(owner).createAndInitializePoolIfNecessary(
         token0,
         token1,
         fee,
         price,
         { gasLimit: 5000000 }
     )
+
     const poolAddress = await factory.connect(owner).getPool(
         token0,
         token1,
@@ -65,7 +66,7 @@ async function deployPool(token0, token1, fee, price) {
 }
 
 async function main() {
-    const usdtUsdc500 = await deployPool(TETHER_ADDRESS, USDC_ADDRESS, 500, encodePriceSqrt(1, 1))
+    const usdtUsdc500 = await deployPool(USDC_ADDRESS, TETHER_ADDRESS, 500, encodePriceSqrt(1, 1))
 
     let addresses = [
         `USDT_USDC_500=${usdtUsdc500}`
@@ -85,7 +86,7 @@ async function main() {
 }
 
 /*
-npx hardhat run --network localhost scripts/03_deployPool.js
+npx hardhat run --network localhost scripts/03_deployPools.js
 */
 
 main()
