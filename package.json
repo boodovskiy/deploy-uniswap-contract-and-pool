@@ -9,8 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.6",
     "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
@@ -22,8 +21,8 @@
     "@typechain/hardhat": "^6.1.6",
     "@types/chai": "^4.3.5",
     "@types/mocha": "^10.0.1",
-    "@uniswap/v3-periphery": "^1.4.3",
-    "@uniswap/v3-sdk": "^3.9.0",
+    "@uniswap/v3-periphery": "^1.4.4",
+    "@uniswap/v3-sdk": "^3.27.0",
     "bignumber.js": "^9.1.1",
     "chai": "^4.3.7",
     "dotenv": "^16.0.3",
@@ -34,5 +33,13 @@
     "typechain": "^8.1.1",
     "typescript": "^5.0.4",
     "axios": "^1.7.2"
+  },
+  "overrides": {
+    "@uniswap/v3-periphery": {
+      "@openzeppelin/contracts": "3.4.2-solc-0.7"
+    },
+    "@uniswap/v3-sdk": {
+      "@openzeppelin/contracts": "3.4.2-solc-0.7"
+    }
   }
 }
