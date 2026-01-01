@@ -36,10 +36,10 @@
   },
   "overrides": {
     "@uniswap/v3-periphery": {
-      "@openzeppelin/contracts": "3.4.2-solc-0.7"
+      "@openzeppelin/contracts": "3.4.2"
     },
     "@uniswap/v3-sdk": {
-      "@openzeppelin/contracts": "3.4.2-solc-0.7"
+      "@openzeppelin/contracts": "3.4.2"
     }
   }
 }
