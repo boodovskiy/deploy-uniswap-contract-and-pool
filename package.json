@@ -40,6 +40,7 @@
     },
     "@uniswap/v3-sdk": {
       "@openzeppelin/contracts": "3.4.2"
-    }
+    },
+    "form-data": "4.0.5"
   }
 }
