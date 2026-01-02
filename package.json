@@ -41,6 +41,8 @@
     "@uniswap/v3-sdk": {
       "@openzeppelin/contracts": "3.4.2"
     },
-    "form-data": "4.0.5"
+    "form-data": "4.0.5",
+    "cipher-base": "1.0.5",
+    "pbkdf2": "3.1.3"
   }
 }
