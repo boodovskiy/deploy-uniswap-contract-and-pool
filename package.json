@@ -38,10 +38,10 @@
     "qs": "6.14.1",
     "base-x": "3.0.11",
     "@uniswap/v3-periphery": {
-      "@openzeppelin/contracts": "3.4.2"
+      "@openzeppelin/contracts": "^4.8.3"
     },
     "@uniswap/v3-sdk": {
-      "@openzeppelin/contracts": "3.4.2"
+      "@openzeppelin/contracts": "^4.8.3"
     },
     "form-data": "4.0.5",
     "cipher-base": "1.0.5",
