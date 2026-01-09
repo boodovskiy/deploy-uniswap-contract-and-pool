@@ -51,6 +51,7 @@
     "ws": "^7.5.10",
     "secp256k1": "^4.0.4",
     "undici": "5.28.5",
-    "serialize-javascript": "^6.0.2"
+    "serialize-javascript": "^6.0.2",
+    "micromatch": "^4.0.8"
   }
 }
